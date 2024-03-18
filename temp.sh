@@ -1,11 +1,14 @@
-#!/bin/bash
-gh repo create made-with-clai
-cd made-with-clai
-echo "<h2>Hello, World!</h2>" > index.html
+#!/bin/sh
 git init
 git add .
 git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/made-with-clai.git
-git push -u origin main
-gh pages create -d -t master -s
+git remote add origin https://github.com/username/made-with-clai.git
+git push -u origin master
+cd /tmp
+echo "<h1>Hello World</h1>" > index.html
+git clone https://github.com/username/made-with-clai.git
+cd made-with-clai
+mv /tmp/index.html ./
+git add .
+git commit -m "Added index.html"
+git push origin master
